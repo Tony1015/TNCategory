@@ -49,8 +49,6 @@
 
 - (void)tn_removeAllSubviews;
 
-//- (void)tn_showBottomLine:(BOOL)show withTintColor:(UIColor *)tintColor;
-//
-//- (void)tn_showBottomLine:(BOOL)show;
+
 
 @end
