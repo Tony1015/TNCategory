@@ -8,7 +8,7 @@
 
 #import "UIView+TNAdd.h"
 
-#define BottomLineView "BottomLineView"
+//#define BottomLineView "BottomLineView"
 
 
 
@@ -240,32 +240,32 @@
 }
 
 
-- (UIView *)bottomLineView{
-    UIView *view = objc_getAssociatedObject(self, BottomLineView);
-    if (!view) {
-        view = [[UIView alloc]init];
-        [self addSubview:view];
-        [view mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.bottom.right.equalTo(self);
-            make.height.mas_equalTo(0.5);
-        }];
-        self.bottomLineView = view;
-    }
-    return view;
-}
-
-- (void)setBottomLineView:(UIView *)bottomLineView{
-    objc_setAssociatedObject(self, BottomLineView, bottomLineView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-- (void)tn_showBottomLine:(BOOL)show withTintColor:(UIColor *)tintColor{
-    self.bottomLineView.hidden = !show;
-    self.bottomLineView.backgroundColor = tintColor;
-}
-
-- (void)tn_showBottomLine:(BOOL)show{
-    [self tn_showBottomLine:show withTintColor:tnLineDefaultColor];
-}
+//- (UIView *)bottomLineView{
+//    UIView *view = objc_getAssociatedObject(self, BottomLineView);
+//    if (!view) {
+//        view = [[UIView alloc]init];
+//        [self addSubview:view];
+//        [view mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.left.bottom.right.equalTo(self);
+//            make.height.mas_equalTo(0.5);
+//        }];
+//        self.bottomLineView = view;
+//    }
+//    return view;
+//}
+//
+//- (void)setBottomLineView:(UIView *)bottomLineView{
+//    objc_setAssociatedObject(self, BottomLineView, bottomLineView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+//}
+//
+//- (void)tn_showBottomLine:(BOOL)show withTintColor:(UIColor *)tintColor{
+//    self.bottomLineView.hidden = !show;
+//    self.bottomLineView.backgroundColor = tintColor;
+//}
+//
+//- (void)tn_showBottomLine:(BOOL)show{
+//    [self tn_showBottomLine:show withTintColor:tnLineDefaultColor];
+//}
 
 
 
