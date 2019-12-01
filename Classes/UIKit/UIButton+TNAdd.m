@@ -24,6 +24,7 @@
 
 - (void)clickedBlock:(void(^)(void))block{
     [self addTarget:self action:@selector(clickedBtn) forControlEvents:UIControlEventTouchUpInside];
+    self.clickBlock = block;
 }
 
 
