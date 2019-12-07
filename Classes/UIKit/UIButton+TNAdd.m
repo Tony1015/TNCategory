@@ -34,4 +34,13 @@
     }
 }
 
++ (instancetype)buttonWithTitle:(NSString *)title textColor:(UIColor *)textColor font:(UIFont *)font image:(UIImage *)image{
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    if(title)[btn setTitle:title forState:UIControlStateNormal];
+    if(textColor)[btn setTitleColor:textColor forState:UIControlStateNormal];
+    if(font)btn.titleLabel.font = font;
+    if(image)[btn setImage:image forState:UIControlStateNormal];
+    return btn;
+}
+
 @end

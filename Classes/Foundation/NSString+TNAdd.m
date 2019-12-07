@@ -75,7 +75,7 @@
     if (!string) {
         return YES;
     }
-    if (string.length == 0) {
+    if ([string stringByTrimmingCharactersInSet:NSCharacterSet.whitespaceCharacterSet].length == 0) {
         return YES;
     }
     return NO;
@@ -238,16 +238,12 @@
     }
 //    NSPredicate *pswTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", @"^(?![A-Z]+$)(?![a-z]+$)(?!\\d+$)\\S+$"];
     
-    BOOL a = [[NSPredicate predicateWithFormat:@"SELF MATCHES %@", @".*[0-9]+.*"] evaluateWithObject:self];
-    
-    BOOL check = [[NSPredicate predicateWithFormat:@"SELF MATCHES %@", @".*[A-Za-z]+.*"] evaluateWithObject:self];
-    
-    
-    if (![[NSPredicate predicateWithFormat:@"SELF MATCHES %@", @".*[0-9]+.*"] evaluateWithObject:self]) {
+    if(![[NSPredicate predicateWithFormat:@"SELF MATCHES %@", @"[0-9a-zA-Z]{6,16}"] evaluateWithObject:self]||
+    [[NSPredicate predicateWithFormat:@"SELF MATCHES %@", @"[0-9]+"] evaluateWithObject:self]||
+       [[NSPredicate predicateWithFormat:@"SELF MATCHES %@", @"[a-zA-Z]+"] evaluateWithObject:self]){
         return NO;
-    }else{
-        return [[NSPredicate predicateWithFormat:@"SELF MATCHES %@", @".*[A-Za-z]+.*"] evaluateWithObject:self];
     }
+    return YES;
 }
 
 //邮箱

@@ -14,6 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)clickedBlock:(void(^)(void))block;
 
+
++ (instancetype)buttonWithTitle:(NSString *)title textColor:(NSString *)textColor font:(UIFont *)font image:(UIImage *)image;
+
 @end
 
 NS_ASSUME_NONNULL_END
